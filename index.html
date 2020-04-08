@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Hier kannst du eine Vorlage für einen Muster-Widerspruch gegen die Ablehnung deines VIG-Antrags generieren.">
+    <title>VIG Widerspruch · Muster Generator</title>
+
+
+<!-- Bootstrap core CSS & JS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+
+
+</head>
+<body>
+<main role="main" class="container"><!-- main -->
+
+
+
+
+<h1>VIG Widerspruch Generator</h1>
+<p>Wenn du über FragDenStaat eine VIG Anfrage im Rahmen der Kampagne Topf Secret gestellt hast und die Behörde dir nicht den gewünschten Kontrollbericht zugeschickt hat, kannst du hier einen Widerspruch generieren. Über dieses Formular kannst du einen Muster-Widerspruch erstellen. Dieser stellt nur ein Beispiel dar und muss unter Umständen an den konkreten Einzelfall angepasst werden.</p>
+<h2>Weitere Informationen und Ressourcen:</h2>
+<ul>
+  <li><a href="https://fragdenstaat.de/kampagnen/lebensmittelkontrolle/">Gehe zur Topf Secret Plattform</a></li>
+  <li><a href="https://fragdenstaat.de/kampagnen/lebensmittelkontrolle/klagen/">Liste mit Klagen nach dem VIG</a></li>
+  <li><a href="https://www.foodwatch.org/de/startseite/">Foodwatch.org</a></li>
+</ul>
+<div class="alert alert-warning" role="alert">Wenn dein Widerspruch nicht erfolgreich ist, fallen Gebühren an!</div>
+<hr />
+
+
+
+
+<p class="lead">Fülle dieses Formular aus, um einen Muster-Widerspruch zu generieren:</p>
+
+
+
+<form class="form-group" id="form-group-anfrageDisclaimer">
+<p>Wir bieten keine Rechtsdienstleistung sondern nur einen vorformulierten Widerspruch an. Der Betreiber dieser Website haftet nicht für Schäden, die aus der Nutzung des Widerspruchs entstehen und bietet keine Gewährleistung. Der Ausschluss gilt nicht für Schadenersatzansprüche aus grob fahrlässiger bzw. vorsätzlicher Verletzung von Pflichten sowie für jede Verletzung von Leben, Körper und Gesundheit.</p>
+<p><input class="btn btn-primary" type="button" id="anfrageDisclaimerOk" name="anfrageDisclaimerOk" value="Beginnen"></p>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+$('#anfrageDisclaimerOk').click(function(){
+  $("#form-group-anfrageDatum").show()
+  $("#anfrageDisclaimerOk").attr("disabled", "disabled")
+});
+//]]>
+</script>
+
+
+
+
+<form class="form-group" id="form-group-anfrageDatum" style="display:none;">
+<h3>1. Allgemeine Informationen</h3>
+
+<div class="form-group">
+  <label for="anfrageDatum">Wann hast du deine Anfrage über FragDenStaat gestellt? (optional)</label>
+  <p><small id="anfrageDatumHelpBlock" class="form-text text-muted">Gib das Datum der Anfrage im Format <i>Tag.Monat.Jahr</i> (zum Beispiel <i>24.02.2020</i>) ein</small></p>
+  <input type="text" id="anfrageDatum" name="anfrageDatum" class="form-control" aria-describedby="anfrageDatumHelpBlock">
+</div>
+
+<div class="form-group">
+  <label for="anfrageBetrieb">Name des betroffenen Betriebs (optional)</label>
+  <p><small id="anfrageBetriebBlock" class="form-text text-muted">Der Name des Betriebs, von dem du den Kontrollbericht erhalten möchtest</small></p>
+  <input type="text" id="anfrageBetrieb" name="anfrageBetrieb" class="form-control" aria-describedby="anfrageBetriebHelpBlock">
+</div>
+
+<div class="form-group">
+  <label for="anfrageAktenzeichen">Aktenzeichen der Behörde (optional)</label>
+  <p><small id="anfrageAktenzeichenHelpBlock" class="form-text text-muted">Das Aktenzeichen der Behörde, falls es bereits ein solches gibt</small></p>
+  <input type="text" id="anfrageAktenzeichen" name="anfrageAktenzeichen" class="form-control" aria-describedby="anfrageAktenzeichenHelpBlock">
+</div>
+
+<p><input class="btn btn-secondary" type="button" id="anfrageDatumWeiter" name="anfrageDatumWeiter" value="Weiter"></p>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+
+$('#anfrageDatumWeiter').click(function(){
+	$("#form-group-berichtErhalten").show()
+	$("#form-group-anfrageDatum").children().children().attr("disabled", "disabled")
+	$("#anfrageDatumWeiter").attr("disabled", "disabled")
+	// set data for Musterschreiben
+	if( $("#anfrageDatum").val() ) {  $("#output-anfrageDatum").text( "am " + $("#anfrageDatum").val() ); } 
+	if( $("#anfrageBetrieb").val() ) {  $("#output-anfrageBetrieb").text( "des Betriebs " + $("#anfrageBetrieb").val() ); } 
+	if( $("#anfrageAktenzeichen").val() ) {  $("#output-anfrageAktenzeichen").text( "Ihr Aktenzeichen: " + $("#anfrageAktenzeichen").val() ); } 
+
+});
+
+//]]>
+</script>
+
+
+
+<fieldset class="form-group" id="form-group-berichtErhalten"  style="display:none;">
+<h3>2. Hast du den Kontrollbericht von der Behörde erhalten?</h3>
+<p>
+ <input class="btn btn-secondary" type="button" id="berichtUnvollstandig" name="berichtUnvollstandig" value="Ja, aber unvollständig">
+ <input class="btn btn-secondary" type="button" id="berichtNein" name="berichtNein" value="Nein, keinen Bericht erhalten">
+</p>
+</fieldset>
+<script type="text/javascript">
+//<![CDATA[
+$('#berichtUnvollstandig').click(function(){
+    $("#form-group-fehltGrund").show()
+    $("#berichtUnvollstandig").attr("disabled", "disabled")
+    $("#berichtNein").attr("disabled", "disabled")
+});
+$('#berichtNein').click(function(){
+    $("#form-group-abgelehntJaNein").show()
+    $("#berichtUnvollstandig").attr("disabled", "disabled")
+    $("#berichtNein").attr("disabled", "disabled")
+});
+//]]>
+</script>
+
+
+
+
+
+
+<fieldset class="form-group" id="form-group-abgelehntJaNein" style="display:none;">
+<h3>3. Hat die Behörde deinen Antrag abgelehnt?</h3>
+<p>
+ <input class="btn btn-secondary" type="button" id="antragAbgelehnt" name="antragAbgelehnt" value="Ja, der Antrag wurde abgelehnt">
+ <input class="btn btn-secondary" type="button" id="antragNichtBearbeitet" name="antragNichtBearbeitet" value="Die Behörde hat (noch) nicht geantwortet">
+</p>
+</fieldset>
+<script type="text/javascript">
+//<![CDATA[
+$('#antragAbgelehnt').click(function(){
+    $("#form-group-abgelehntGrund").show()
+    $("#antragAbgelehnt").attr("disabled", "disabled")
+    $("#antragNichtBearbeitet").attr("disabled", "disabled")
+});
+$('#antragNichtBearbeitet').click(function(){
+    $("#form-group-untatigkeitsklage").show()
+    $("#antragAbgelehnt").attr("disabled", "disabled")
+    $("#antragNichtBearbeitet").attr("disabled", "disabled")
+});
+//]]>
+</script>
+
+
+
+
+
+<fieldset class="form-group" id="form-group-abgelehntGrund" style="display:none;">
+<h3>4. Warum wurde der Antrag abgelehnt?</h3>
+<p>Wähle aus, wie die Behörde die Ablehnung deines Antrags begründet hat.</p>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="aG" name="abgelehntGrund-Datenschutz" id="abgelehntGrund-Datenschutz">
+  <label class="form-check-label" for="abgelehntGrund-Datenschutz">
+    Keine Herausgabe wegen Datenschutz des betroffenen Betriebs
+  </label>
+</div><div class="form-check">
+  <input class="form-check-input" type="checkbox" value="aG" name="abgelehntGrund-Veroffentlichung" id="abgelehntGrund-Veroffentlichung">
+  <label class="form-check-label" for="abgelehntGrund-Veroffentlichung">
+    Es droht eine Veröffentlichung auf FragDenStaat.de bzw. im Internet
+  </label>
+</div><div class="form-check">
+  <input class="form-check-input" type="checkbox" value="aG" name="abgelehntGrund-Schwerwiegend" id="abgelehntGrund-Schwerwiegend">
+  <label class="form-check-label" for="abgelehntGrund-Schwerwiegend">
+    Die Behörde gibt nur schwerwiegende Verstöße heraus
+  </label>
+</div><div class="form-check">
+  <input class="form-check-input" type="checkbox" value="aG" name="abgelehntGrund-Email" id="abgelehntGrund-Email">
+  <label class="form-check-label" for="abgelehntGrund-Email">
+    Anträge per E-Mail sind nicht zulässig
+  </label>
+</div><div class="form-check">
+  <input class="form-check-input" type="checkbox" value="aG" name="abgelehntGrund-Einsicht" id="abgelehntGrund-Einsicht">
+  <label class="form-check-label" for="abgelehntGrund-Einsicht">
+    Es ist nur eine Einsichtnahme, aber keine Herausgabe der Kontrollberichte möglich
+  </label>
+</div><div class="form-check">
+  <input class="form-check-input" type="checkbox" value="aG" name="abgelehntGrund-Sonstiges" id="abgelehntGrund-Sonstiges">
+  <label class="form-check-label" for="abgelehntGrund-Sonstiges">
+    Sonstiges.
+  </label>
+</div>
+<div><input class="btn btn-secondary" type="button" id="abgelehntGrundWeiter" name="abgelehntGrundWeiter" value="Widerspruch erstellen"></div>
+</fieldset>
+
+<script type="text/javascript">
+//<![CDATA[
+$('#abgelehntGrundWeiter').click(function(){ // bei jedem click (mehrfach nutzbar)
+    $("#form-group-createWiderspruch").show();
+    // Warnungen auswählen
+    if( $('#abgelehntGrund-Sonstiges').is(':checked') ) {  
+        $("#alertWiderspruchFallback").hide(); 
+        $("#alertWiderspruchDefault").hide(); 
+        $("#alertWiderspruchSonstiges").show(); 
+    } else { 
+        $("#alertWiderspruchFallback").hide(); 
+        $("#alertWiderspruchSonstiges").hide(); 
+        $("#alertWiderspruchDefault").show(); 
+    }
+    // Bestandteile zurücksetzen
+    $("#output-wDatenschutz").hide();
+    $("#output-wVeroffentlichung").hide();
+    $("#output-wSchwerwiegend").hide();
+    $("#output-wEmail").hide();
+    $("#output-wEinsicht").hide();
+    $("#output-wKlage").hide();
+    $("#output-wFallback").hide(); 
+    // gewählte Muster Bestandteile anzeigen
+    if( $('#abgelehntGrund-Datenschutz').is(':checked') ) {  $("#output-wDatenschutz").show(); } 
+    if( $('#abgelehntGrund-Veroffentlichung').is(':checked') ) {  $("#output-wVeroffentlichung").show(); } 
+    if( $('#abgelehntGrund-Schwerwiegend').is(':checked') ) {  $("#output-wSchwerwiegend").show(); } 
+    if( $('#abgelehntGrund-Email').is(':checked') ) {  $("#output-wEmail").show(); } 
+    if( $('#abgelehntGrund-Einsicht').is(':checked') ) {  $("#output-wEinsicht").show(); } 
+    // bei keiner Auswahl: Fallback
+    if( !($('#abgelehntGrund-Datenschutz').is(':checked')) && 
+        !($('#abgelehntGrund-Veroffentlichung').is(':checked')) && 
+        !($('#abgelehntGrund-Schwerwiegend').is(':checked')) && 
+        !($('#abgelehntGrund-Email').is(':checked')) && 
+        !($('#abgelehntGrund-Einsicht').is(':checked')) ){
+        	$("#alertWiderspruchDefault").hide(); 
+        	$("#alertWiderspruchSonstiges").hide(); 
+        	$("#alertWiderspruchFallback").show(); 	
+		$("#output-wFallback").show();	
+     }
+
+});
+//]]>
+</script>
+
+
+
+
+
+
+
+
+<fieldset class="form-group" id="form-group-createWiderspruch" style="display:none;">
+<h2>Musterschreiben</h2>
+<p>Mit diesem Muster kannst du einen Widerspruch bei der Behörde einlegen. Kopiere den Text und verschicke ihn an die Behörde über FragDenStaat.</p>
+
+<div class="alert alert-danger" role="alert" id="alertWiderspruchFallback" style="display:none;">Du hast keine Angaben ausgewählt, weshalb deinem Antrag nicht stattgegeben wurde. Du solltest das Schreiben um eine Argumentation für deinen konkreten Einzelfall ergänzen. Im Zweifel sollte ein Rechtsanwalt kontaktiert werden.</div> 
+<div class="alert alert-danger" role="alert" id="alertWiderspruchSonstiges" style="display:none;">Du unter anderem angegeben, dass die Behörde sonstige Begründungen angegeben hat, weshalb deinem Antrag nicht stattgegeben wurde. Du solltest das Schreiben um eine Argumentation für deinen konkreten Einzelfall ergänzen. Im Zweifel sollte ein Rechtsanwalt kontaktiert werden.</div> 
+<div class="alert alert-warning" role="alert" id="alertWiderspruchDefault" style="display:none;">Prüfe das Musterschreiben und passe es deinem konkreten Einzelfall an. Im Zweifel sollte ein Rechtsanwalt kontaktiert werden.</div> 
+
+<!-- MUSTER -->
+<div style="border:1px solid black;"><samp>
+<p>Betreff: Widerspruch wegen Ablehnung meines VIG-Antrags<br>
+<span id="output-anfrageAktenzeichen"></span> <br> </p>
+<p>Sehr geehrte Damen und Herren, <br>
+<br>
+ich hatte <span id="output-anfrageDatum"></span> einen Antrag gemäß § 4 VIG gestellt und um die Übersendung von Informationen bezüglich der letzten Betriebsüberprüfungen <span id="output-anfrageBetrieb">bei dem betroffenen Betrieb</span> und um die entsprechenden Ergebnisse der Betriebsüberprüfungen gebeten. Leider wurde diesem Antrag nicht stattgegeben. <br>
+Gegen die Ablehnung meines Antrags lege ich hiermit aus nachfolgenden Gründen Widerspruch ein.<br>
+<br><br>
+Nach § 2 Abs. 1 S. 1 Nr. 1 VIG ist der Anwendungsbereich eröffnet. Danach hat "Jeder" einen Anspruch auf die Informationen. Der Zugang ist von keinem besonderen Interesse oder einer Betroffenheit abhängig. (BT-Drs. 16/5404, S. 10.) Es liegen ferner auch keine Ausschlussgründe im Sinne von §§ 3, 4 Abs. 3-5 VIG vor. Die maßgeblichen VIG-Vorschriften sind auch weder verfassungswidrig noch europarechtswidrig. (VGH Baden-Württemberg, Beschluss vom 13.12.2019, Az. 10 S 1891/19, Rn. 7 ff.)<br>
+<br>
+
+<!-- wDatenschutz -->
+<span id="output-wDatenschutz" style="display:none;"># Kein Verstoß gegen Datenschutzrecht<br>
+Der Schutz personenbezogener Daten (§ 3 S. 1 Nr. 2 lit. a VIG) steht dem Anspruch nach § 2 Abs. 1 S. 1 Nr. 1 VIG nicht entgegen. Denn selbst wenn man die Auskunft nach dem VIG und Herausgabe von Kontrollberichten als Verarbeitung personenbezogener Daten wertet, so wäre diese nach Art. 6 Abs. 1 S. 1 lit. c, Abs. 3 S. 1 DSGVO gerechtfertigt, da sie zur Erfüllung einer rechtlichen Verpflichtung, der die Behörde unterliegt, erforderlich ist. (VGH Baden-Württemberg, Beschluss vom 13.12.2019, Az. 10 S 1891/19, Rn. 25.) Der Datenschutz steht also der Herausgabe von Kontrollberichten nicht entgegen.<br><br></span>
+
+<!-- wVeroffentlichung -->
+<span id="output-wVeroffentlichung" style="display:none;"># Veröffentlichung ist zulässig<br>
+Mein Antrag darf nicht allein deshalb abgelehnt werden, weil der Plattformbetreiber FragDenStaat.de die Informationen erlangen und seinerseits im Internet veröffentlichen könnte. Erstens (a) können die Absichten dieses Plattformbetreibers nicht dem Antragsteller zugerechnet und eine Veröffentlichungsabsicht unterstellt werden und zweitens (b) wäre die Veröffentlichung der erlangten Informationen zulässig.<br>
+(a) Einem Antragsteller, der seine Anfrage über die Plattform "Topf Secret" von FragDenStaat stellt, kann keine Veröffentlichungsabsicht unterstellt werden. Zudem wird ein Verhalten des Plattformbetreibers FragDenStaat nicht dem Antragsteller zugerechnet. (VGH Baden-Württemberg, Beschluss vom 13.12.2019, Az. 10 S 1891/19, Rn. 29.) Eine automatisierte Veröffentlichung von den Informationen findet nicht statt. Vielmehr bleibt es auch bei Nutzung des auf der Website zur Verfügung gestellten Antragformulars die Entscheidung des jeweiligen Antragstellers, ob und wo er die erhaltenen Informationen später veröffentlicht. Insbesondere werden die Antragsteller mit der Nutzung des vereinfachten Verfahrens der Antragstellung über "Topf Secret" nicht zur anschließenden Veröffentlichung verpflichtet. "Topf Secret" stellt lediglich eine bürgerfreundliche Möglichkeit dar, auf einfache Weise den entsprechenden Informationsantrag  zu  stellen.  Es  bleibt aber  allein  die  Entscheidung  des  einzelnen  Antragstellers, ob er die erhaltenen Kontrollberichte veröffentlicht oder nicht. <br>
+(b) Die Veröffentlichung der erlangten Informationen wäre zulässig. Es entspricht der ausdrücklichen Zwecksetzung des § 1 VIG, den Markt transparenter zu gestalten, sodass in einer Internetpublikation eine Stärkung des Verbraucherschutzes gesehen werden kann. (VGH Baden-Württemberg, Beschluss vom 13.12.2019, Az. 10 S 1891/19, Rn. 29; OVG Lüneburg, Beschluss vom 24. Oktober 2017, Az. 10 LA 90/16, juris-Rn. 47.) Der Antrag entspricht erkennbar den Zwecken des VIG: Herstellung von Transparenz und Aufdeckung etwaiger Missstände. <br>
+Das VIG verbietet die Veröffentlichung von Informationen im Internet durch die jeweiligen Antragsteller nicht. (VGH Baden-Württemberg, Beschluss vom 13.12.2019, Az. 10 S 1891/19, Rn. 39.) Dass es sich hierbei um eine planwidrige Regelungslücke handelt, erscheint deshalb unwahrscheinlich, weil das VIG in seiner ersten Fassung im Jahr 2007 und somit in Zeiten des Internets erlassen wurde. Es ist daher davon auszugehen, dass  dem  Gesetzgeber  bei  Erlass des  VIG  die  Möglichkeit  der  einfachen  Verbreitung von Informationen über das Internet bewusst war.<br>
+Das VG Regensburg hat in seinem Urteil 9.7.2015 mit Aktenzeichen 5 K 14.1110 ausdrücklich eine Weitergabe von Informationen, die der Antragsteller nach § 6 Abs. 1 VIG über einen Betrieb erhält, an Dritte erlaubt. Dies hat der VGH München bestätigt. (VGH München Urt. v. 16.2.2017, Az. 20 BV 15.2208.) <br><br></span>
+
+<!-- wSchwerwiegend -->
+<span id="output-wSchwerwiegend" style="display:none;"># Auskunft umfasst alle Verstöße<br>
+§ 2 Abs. 1 S. 1 Nr. 1 VIG sieht gerade auch die Erteilung von Informationen über geringfügige Verstöße und frühere Verstöße vor.  Eine Erheblichkeitsschwelle sieht § 2 Abs. 1 S. 1 Nr. 1 VIG nicht vor. Die Informationsherausgabe hat also auch dann zu erfolgen, wenn nur "geringfügige" oder "mittelschwere", aber dennoch unzulässige Abweichungen  festgestellt  wurden. (VG  Mainz,  Beschluss  vom  5.  April  2019, Az. 1 L 103/19.MZ.) Die  Annahme  einer  Erheblichkeitsschwelle wäre mit  dem  Leitbild  des  mündigen  Verbrauchers, dass dem VIG zugrunde liegt (BT-Drs. 16/5404, 7), nicht zu vereinbaren. Diesem Leitbild entsprechend ist es den Verbrauchern überlassen, die offen gelegten Informationen einzuordnen und zu entscheiden, welche Konsequenzen sie hieraus für künftige Konsumentscheidungen ziehen. <br>
+Ebenso wenig ist für die Entscheidung über den Informationsanspruch relevant, ob die festgestellten Abweichungen ein nur situatives Phänomen darstellen oder über längere Zeit bestehen. Der Gesetzgeber hat den Anspruch aus § 2 Abs. 1 S. 1 Nr. 1 VIG nicht auf  noch  andauernde  Mängel beschränkt. (OVG  Saarlouis,  Beschluss vom 3.Februar 2011, Az. 3 A 270/10, juris-Rn. 40 ff.) Die einzige Vorgabe in zeitlicher Hinsicht, die das VIG stellt, ist die in § 3 Abs. 1 lit. e VIG geregelte Voraussetzung, dass die beantragten Informationen § 2 Abs. 1 S. 1 Nr 1 VIG nicht vor mehr als fünf Jahren seit der Antragstellung entstanden sind. Aus dieser Regelung gibt sich im Umkehrschluss, dass der Informationsanspruchs alle Verstöße vor Ablauf von fünf Jahren umfasst. (vgl. OVG Münster, Beschluss vom 27. Mai 2009, Az. 13a F 13/09, juris-Rn.  19.) Hinzu  kommt,  dass  das  Datum  der  lebensmittelrechtlichen  Überprüfungen aus den Kontrollberichten hervorgeht. Der mündige Verbraucher kann die Aktualität der Information daher einordnen. <br><br></span>
+
+<!-- wEmail -->
+<span id="output-wEmail" style="display:none;"># Anträge per E-Mail sind zulässig<br>
+Der Antrag nach § 4 Abs. 1 VIG ist seit 2012 formlos möglich. (Zipfel/Rathke LebensmittelR/Heinicke, 174. EL Juli 2019, VIG § 4 Rn. 5.) Dabei ist insbesondere eine Antragstellung per E-Mail möglich.<br><br></span>
+
+<!-- wEinsicht -->
+<span id="output-wEinsicht" style="display:none;"># Kein Verweis auf Akteneinsicht <br>
+Das Abweichen von der beantragten Zugangsart ist als Ablehnung des Antrags zu qualifizieren, weil es sich dabei nicht um eine Nebenbestimmung nach § 36 Abs. 2 VwVfG, sondern um eine Inhaltsbestimmung des Verwaltungsakts handelt. (BeckOK InfoMedienR/Rossi, VIG § 6 Rn. 5.) Die Ablehnung verstößt (a) gegen § 6 Abs. 1 S. 2 VIG und (b) gegen den Verhältnismäßigkeitsgrundsatz.<br>
+a) Eine bestimmte Art der Informationsgewährung darf nur aus wichtigem Grund abgelehnt werden. Wie das Bundesverwaltungsgericht zur vergleichbaren Vorschrift des § 4 Abs. 1 UIG a.F. festgestellt hat, sind an das Vorliegen eines gewichtigen Grundes strenge Anforderungen zu stellen: So müssen bei der Ermessensentscheidung über die Art der Informationsgewährung die Ziele des Informationsgesetzes berücksichtigt werden. (BVerwG, Urteil vom 06. Dezember 1996, Az. 7 C 64/95, juris-Rn. 14-16.) Mit Blick auf den Zweck des VIG, welches möglichst ungehinderten Informationszugang ermöglichen will, kommt den Wünschen des Antragstellers besondere Bedeutung zu. Sie haben keine so gewichtigen Gründe vorgetragen, die ein Abweichen von der gewünschten Form rechtfertigen. <br>
+b) Der Verweis auf eine Akteneinsicht statt der Übersendung der Informationen in Schriftform ist zum einen schon gar nicht zur Erreichung irgendeines legitimen Zweckes geeignet, da auch bei der Akteneinsicht die Anfertigung von Notizen, Ablichtungen und Ausdrucken gemäß § 1 Abs. 4 VIG i.V.m. § 7 Abs. 4 S. 1 IFG zulässig wäre. Zum anderen ist der Verweis auf die Akteneinsicht nicht angemessen und verstößt somit gegen den Verhältnismäßigkeitsgrundsatz. Für den Antragsteller kommt eine Akteneinsicht am Ort der Behörde zu den Öffnungszeiten der Behörde nicht in Betracht. Der Antragsteller müsste sonst eine Anfahrt in Kauf nehmen und sich zu den Öffnungszeiten frei nehmen. So kann das Ziel des VIG, den einfachen und transparenten Zugang zu Informationen über Betriebe zu schaffen, nicht errreicht werden. Der Verweis auf eine Akteneinsicht ist deswegen unangemessen. <br><br></span>
+
+<!-- wFallback -->
+<span id="output-wFallback" style="display:none;">Der Datenschutz steht meinem Antrag nicht entgegen, da die Herausgabe der Kontrollberichte nach Art. 6 Abs. 1 S. 1 lit. c, Abs. 3 S. 1 DSGVO gerechtfertigt ist. Eine Veröffentlichung durch den Plattformbetreiber FragDenStaat.de kann dem Antragsteller nicht zugerechnet werden,  wobei die Veröffentlichung ohnehin rechtmäßig wäre, da sie gerade dem Zweck des § 1 VIG entspricht. (VGH Baden-Württemberg, Beschluss vom 13.12.2019, Az. 10 S 1891/19, Rn. 29; OVG Lüneburg, Beschluss vom 24. Oktober 2017, Az. 10 LA 90/16, juris-Rn. 47.)<br>
+Von dem Anspruch auf Herausgabe der angeforderten Informationen ist nach § 2 Abs. 1 S. 1 Nr. 1 VIG auch die Erteilung von Informationen über geringfügige Verstöße und frühere Verstöße umfasst. (VG  Mainz,  Beschluss  vom  5.  April  2019, Az. 1 L 103/19.MZ.)<br><br></span>
+
+
+<br> <br>
+Ich bitte Sie deshalb meinem ursprünglich gestellten Antrag statt zu geben und verbleibe<br>
+mit freundlichen Grüßen </p>
+</samp></div>
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<fieldset class="form-group" id="form-group-fehltGrund" style="display:none;">
+<h2>Musterschreiben</h2>
+<div class="alert alert-warning" role="alert">Ergänze dieses Muster an der entsprechenden Stelle mit den Informationen, die dir die Behörde noch zusenden soll.</div> 
+<!-- MUSTER -->
+<div style="border:1px solid black;"><samp>
+<p>Betreff: Unvollständige Auskunft zu meinem Antrag nach dem VIG<br>
+<span id="output-anfrageAktenzeichen"></span><br></p>
+<p>Sehr geehrte Damen und Herren, <br>
+<br>
+ich hatte <span id="output-anfrageDatum"></span> einen Antrag gemäß § 4 VIG gestellt und um die Übersendung von Informationen bezüglich der letzten Betriebsüberprüfungen <span id="output-anfrageBetrieb">bei dem betroffenen Betrieb</span> und um die entsprechenden Ergebnisse der Betriebsüberprüfungen gebeten. Leider habe ich nur eine unvollständige Auskunft erhalten. <br>
+<br>
+Nach § 2 Abs. 1 S. 1 Nr. 1 VIG ist der Anwendungsbereich eröffnet. Es liegen ferner auch keine Ausschlussgründe im Sinne von §§ 3, 4 Abs. 3-5 VIG vor. Demnach ist meinem Antrag nach dem VIG stattzugeben. <br>
+<br>
+Ich bitte Sie mir noch die folgenden Informationen zu: <br>
+<br><br>
+Hierfür setze ich Ihnen eine Frist von einem Monat.<br><br>
+Mit freundlichen Grüßen </p>
+</samp></div>
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+<fieldset class="form-group" id="form-group-untatigkeitsklage" style="display:none;">
+<h2>Musterschreiben</h2>
+<div class="alert alert-info" role="alert">Bitte gib der Behörde Zeit deinen Antrag zu bearbeiten. Dafür hat die Behörde gemäß § 5 Abs. 2 S. 2 Hs. 1 VIG in der Regel 2 Monate Zeit.</div> 
+<p>Wenn du die Behörde kontaktieren möchtest, kannst du dieses Musterschreiben verwenden. Die Behörde wird darin zur Einhaltung der Frist aufgefordert.</p>
+<!-- MUSTER -->
+<div style="border:1px solid black;"><samp>
+<p>Betreff: Erinnerung zu meinem Antrag nach dem VIG<br>
+<span id="output-anfrageAktenzeichen"></span><br></p>
+<p>Sehr geehrte Damen und Herren, <br>
+<br>
+ich hatte <span id="output-anfrageDatum"></span> einen Antrag gemäß § 4 VIG gestellt und um die Übersendung von Informationen bezüglich der letzten Betriebsüberprüfungen <span id="output-anfrageBetrieb">bei dem betroffenen Betrieb</span> und um die entsprechenden Ergebnisse der Betriebsüberprüfungen gebeten. Leider habe ich bisher die gewünschte Auskunft noch nicht erhalten. <br>
+<br>
+Nach § 2 Abs. 1 S. 1 Nr. 1 VIG ist der Anwendungsbereich eröffnet. Es liegen ferner auch keine Ausschlussgründe im Sinne von §§ 3, 4 Abs. 3-5 VIG vor. Demnach ist meinem Antrag nach dem VIG stattzugeben. Gemäß § 5 Abs. 2 S. 2 VIG besträgt die Frist für die Entscheidung über meinen Antrag 2 Monate nach Antragstellung. Diese Frist ist abgelaufen.<br>
+<br>
+Ich bitte Sie mir die gewünschten Informationen schnellstmöglich zuzuschicken und setze Ihnen hierfür eine Frist von einer Woche. Andernfalls werde ich Untätigkeitsklage vor dem zuständigen Verwaltungsgericht erheben.<br><br>
+Mit freundlichen Grüßen </p>
+</samp></div>
+<h3>Untätigkeitsklage</h3> 
+<p>Sollte die Behörde nach 3 Monaten noch nicht geantwortet haben, ist es möglich eine Untätigkeitsklage gemäß § 75 VwGO zu erheben. Hierfür sollte der Rat eines Rechtsanwalts eingeholt werden.</p> 
+</fieldset>
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<hr />
+<p>
+<small>Wir bieten keine Rechtsdienstleistung an. Dies ist nur ein Muster. Im Zweifel sollte vor Erheben des Widerspruchs ein Anwalt konsultiert werden.</small><br> 
+<a href="" data-toggle="modal" data-target="#exampleModalScrollable">Impressum & Datenschutz</a> | 
+<a href="https://github.com/philipp-r/vig-widerspruch">Open Source</a> 
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Impressum & Datenschutz</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Impressum:</p>
+        <p>Diese Website wird angeboten von:<br> Philip Rackevei <br> E-mail: vig-widerspruch (ät) 8qq (punkt) de<br> <a href="https://github.com/philipp-r/vig-widerspruch">GitHub</a>  </p>
+        <p>Die Website steht in keiner Verbindung zur Organisation Foodwatch oder zu FragDenStaat.de.</p>
+        <p>Datenschutz:</p>
+        <p>Das Formular arbeitet mit Javascript lokal in deinem Browser. Deine Eingaben werden nicht an unseren Server übertragen. Wir nutzen keine Cookies und keine Tracking-Dienste.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Schließen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main><!-- /.main -->
+
+
+</body>
+</html>
+
